@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Master Builder - Constructeur de PC Gaming</title>
+    <meta name="description" content="Constructeur professionnel de PC Gaming sur mesure. Des configurations personnalisées pour tous les budgets.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <header role="banner">
+        <div class="logo-container">
+            <h1>PC Master Builder</h1>
+        </div>
+        <button class="burger" aria-label="Menu" aria-controls="menu" aria-expanded="false">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </button>
+        <nav role="navigation" aria-label="Menu principal">
+            <ul id="menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section id="accueil" class="hero">
+            <div class="hero-content">
+                <h2>Votre PC Gaming Sur Mesure</h2>
+                <p>Des configurations personnalisées pour des performances exceptionnelles</p>
+                <a href="#services" class="cta-button">Découvrir nos services</a>
+            </div>
+        </section>
+
+        <section id="presentation" class="presentation">
+            <h2>À Propos de Moi</h2>
+            <article class="profile">
+                <img src="../img/photoprofilalong.webp" alt="Photo de profil d'Alongkorn" class="profile-image">
+                <div class="profile-content">
+                    <h3>Alongkorn</h3>
+                    <p>Passionné de technologie et constructeur de PC Gaming depuis plus de 5 ans, je mets mon expertise à votre service pour créer la configuration parfaite adaptée à vos besoins.</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="galerie" class="gallery">
+            <h2>Nos Réalisations</h2>
+            <div class="gallery-grid">
+                <figure>
+                    <img src="../img/Water_cooling_PC.jpeg" alt="PC Gaming avec watercooling personnalisé">
+                    <figcaption>Setup RGB avec watercooling</figcaption>
+                </figure>
+                <figure>
+                    <img src="../img/metro.jpg" alt="Configuration gaming compacte">
+                    <figcaption>Setup compact et puissant</figcaption>
+                </figure>
+                <figure>
+                    <img src="../img/pcwhite.jpg" alt="PC Gaming blanc minimaliste">
+                    <figcaption>Design minimaliste en blanc</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <h2>Nos Services</h2>
+            <dl class="services-list">
+                <dt>Configuration Sur Mesure</dt>
+                <dd>Création d'un PC adapté à vos besoins et votre budget</dd>
+                
+                <dt>Watercooling Personnalisé</dt>
+                <dd>Installation de systèmes de refroidissement liquide sur mesure</dd>
+                
+                <dt>Optimisation</dt>
+                <dd>Configuration et optimisation des performances de votre PC</dd>
+            </dl>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contactez-nous</h2>
+            <form id="contactForm" action="#" method="post" novalidate>
+                <fieldset>
+                    <legend>Informations personnelles</legend>
+                    
+                    <div class="form-group">
+                        <label for="nom">Nom*</label>
+                        <input type="text" id="nom" name="nom" required 
+                               pattern="^[A-Za-zÀ-ÿ\- ]{2,30}$"
+                               aria-describedby="nomHelp">
+                        <small id="nomHelp">2 à 30 caractères, lettres uniquement</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prenom">Prénom*</label>
+                        <input type="text" id="prenom" name="prenom" required 
+                               pattern="^[A-Za-zÀ-ÿ\- ]{2,30}$"
+                               aria-describedby="prenomHelp">
+                        <small id="prenomHelp">2 à 30 caractères, lettres uniquement</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required 
+                               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$"
+                               aria-describedby="emailHelp">
+                        <small id="emailHelp">Format: exemple@domaine.com</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telephone">Téléphone*</label>
+                        <input type="tel" id="telephone" name="telephone" required 
+                               pattern="^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$"
+                               aria-describedby="telHelp">
+                        <small id="telHelp">Format: 06 12 34 56 78</small>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Votre demande</legend>
+                    
+                    <div class="form-group">
+                        <label for="message">Message*</label>
+                        <textarea id="message" name="message" required 
+                                  minlength="10" maxlength="500"
+                                  aria-describedby="messageHelp"></textarea>
+                        <small id="messageHelp">10 à 500 caractères</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="horaire">Plage horaire de contact préférée*</label>
+                        <select id="horaire" name="horaire" required>
+                            <option value="">Sélectionnez une plage horaire</option>
+                            <option value="matin">Matin (9h-12h)</option>
+                            <option value="aprem">Après-midi (14h-17h)</option>
+                            <option value="soir">Soir (17h-19h)</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="submit-button">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <nav aria-label="Navigation du pied de page">
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#galerie">Galerie</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2024 PC Master Builder - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <div id="confirmationModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <h2 id="modalTitle">Confirmation d'envoi</h2>
+            <p>Voulez-vous vraiment envoyer ce message ?</p>
+            <div class="modal-buttons">
+                <button id="confirmButton" class="confirm-button">Confirmer</button>
+                <button id="cancelButton" class="cancel-button">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/form-validation.js"></script>
+</body>
+</html>
