@@ -120,6 +120,13 @@ nav a:hover {
 .presentation {
     padding: 5rem 2rem;
     background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.presentation h2,
+.presentation h3,
+.presentation p {
+    color: black;
 }
 
 .profile {
