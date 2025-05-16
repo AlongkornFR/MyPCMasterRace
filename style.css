@@ -11,10 +11,6 @@ h1{
   font-weight: 700;
   font-style: normal;
 }
-body {
-
-  }
-  
 
 header {
     background-color: #1e1e2f;
@@ -57,6 +53,15 @@ header {
   
   nav li a:hover {
     color: #00bfff;
+  }
+
+  .burger {
+    display: none;
+    font-size: 2em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
   }
   
   .accueil {
@@ -192,7 +197,7 @@ header {
   #Contact {
     background-color: #f5f5f5;
     color: #f5f5f5;
-    padding: 80px 20px;
+    padding: 30px 20px;
     text-align: center;
     font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -284,28 +289,52 @@ header {
   font-weight: 300;
   font-style: normal;
     border-top: 1px solid #333;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
   
   footer p {
     margin: 0;
   }
 
+  .moi img{
+    border: #f5f5f5 solid 3px;
+    width: 15%;
+  }
+
   /* Responsive : Tablette (max-width: 1024px) */
 @media screen and (max-width: 1024px) {
   header {
-    flex-direction: column;
+    flex-direction: flex;
     align-items: flex-start;
   }
+
+ .moi img{
+  width: 50%;
+ }
+
 
   nav ul {
     flex-direction: column;
     gap: 10px;
     margin-top: 10px;
+    display: show;
   }
+
+  video {
+    width: 30%;
+    height: auto;
+    margin-top: 15px;
+  }
+
+  .burger{display: block;
+  position: absolute;
+  right: 50px;
+bottom: 50;}
 
   .accueil {
     flex-direction: column;
-    padding-top: 120px;
   }
 
   .accueil div {
@@ -333,7 +362,12 @@ header {
   nav ul {
     width: 100%;
     align-items: center;
+    display: none;
   }
+
+  .burger{display: block;
+    position: absolute;
+    right: 50px;}
 
   .accueil h2,
   .presentation h2,
@@ -353,12 +387,12 @@ header {
   }
 
   video {
-    width: 50%;
+    width: 30%;
     height: auto;
   }
 
   .imagepcgmaing img {
-    max-width: 100%;
+    max-width: 40%;
   }
 
   form {
@@ -386,4 +420,42 @@ header {
   footer {
     font-size: 0.8em;
   }
+}
+
+dl {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  dt {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-top: 25px;
+    color: #00bcd4;
+  }
+
+  dd {
+    margin-left: 20px;
+    margin-top: 5px;
+    font-size: 1em;
+    line-height: 1.5;
+  }
+
+main{    padding-top: 78px;}
+
+a {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  background-color: #1e1e2f;
+  color: #fff;
+  font-size: 1em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+
+a:hover {
+  background-color: #35354d;
 }
