@@ -37,7 +37,7 @@ header {
 }
 
 .logo-container h1 {
-    color: white;
+    color: #000000;
     font-size: 1.5rem;
     
     margin-left: -4.5rem;
@@ -69,7 +69,7 @@ nav ul {
 }
 
 nav a {
-    color: white;
+    color: #000000;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
@@ -90,6 +90,9 @@ nav a:hover {
     text-align: center;
     color: white;
     padding: 0 1rem;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .hero-content {
@@ -99,13 +102,34 @@ nav a:hover {
 .hero h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    font-display: swap;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Optimisation des animations */
+@media (prefers-reduced-motion: no-preference) {
+    .hero h2 {
+        animation: fadeIn 0.5s ease-out;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
     background-color: var(--primary-color);
-    color: white;
+    color: #000000;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
@@ -192,6 +216,12 @@ nav a:hover {
     background-color: var(--secondary-color);
 }
 
+.services h2,
+.services dt,
+.services dd {
+    color: #000000;
+}
+
 .services-list {
     max-width: 800px;
     margin: 0 auto;
@@ -200,74 +230,192 @@ nav a:hover {
 .services-list dt {
     font-weight: bold;
     margin-top: 1.5rem;
-    color: var(--primary-color);
+    color: #000000;
 }
 
 .services-list dd {
     margin-left: 1rem;
     margin-bottom: 1rem;
+    color: #000000;
 }
 
 /* Contact Form */
 .contact {
     padding: 5rem 2rem;
+    min-width: 40%;
+    max-width: 800px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background-color: grey;
+    margin: 2rem auto;
+    width: 90%;
+}
+
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+/* Media queries pour la responsivité */
+@media screen and (max-width: 1024px) {
+    .contact {
+        min-width: 60%;
+        margin: 1.5rem auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact {
+        min-width: 80%;
+        margin: 1rem auto;
+        padding: 3rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact {
+        min-width: 95%;
+        margin: 0.5rem auto;
+        padding: 2rem 1rem;
+    }
 }
 
 .form-group {
     margin-bottom: 1.5rem;
+    position: relative;
 }
 
 label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
+    color: #000000;
 }
 
+/* Amélioration de l'accessibilité des champs de formulaire */
 input, textarea, select {
     width: 100%;
     padding: 0.8rem;
-    border: 1px solid #ddd;
+    border: 2px solid #666666;
     border-radius: 5px;
     font-size: 1rem;
+    background-color: #FFFFFF;
+    color: #000000;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+/* État focus amélioré */
 input:focus, textarea:focus, select:focus {
     outline: none;
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
 }
 
+/* État invalide */
+input:invalid, textarea:invalid {
+    border-color: var(--error-color);
+    background-color: #FFF8F8;
+}
+
+/* État disabled */
+input:disabled, textarea:disabled, select:disabled {
+    background-color: #F5F5F5;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Messages d'aide */
 small {
     display: block;
     margin-top: 0.5rem;
-    color: #666;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
+/* Messages d'erreur */
+.error-message {
+    color: #FFFFFF;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 68, 68, 0.9);
+    border-radius: 4px;
+    display: none;
+}
+
+.error-message:not(:empty) {
+    display: block;
+}
+
+/* Fieldset et Legend */
 fieldset {
-    border: none;
-    padding: 0;
+    border: 2px solid #666666;
+    padding: 1.5rem;
     margin-bottom: 2rem;
+    border-radius: 5px;
 }
 
 legend {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: #000000;
+    padding: 0 1rem;
 }
 
+/* Bouton de soumission */
 .submit-button {
     background-color: var(--primary-color);
-    color: white;
+    color: #000000;
     padding: 1rem 2rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    min-width: 200px;
 }
 
 .submit-button:hover {
     background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+/* Indicateur de champ requis */
+label[for]::after {
+    content: " *";
+    color: var(--error-color);
+}
+
+label[for]:not([required])::after {
+    content: "";
+}
+
+/* Support pour les lecteurs d'écran */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* Modal */
@@ -323,7 +471,7 @@ legend {
 /* Footer */
 footer {
     background-color: var(--primary-color);
-    color: white;
+    color: #000000;
     padding: 2rem;
 }
 
@@ -341,7 +489,7 @@ footer nav ul {
 }
 
 footer a {
-    color: white;
+    color: #000000;
     text-decoration: none;
     transition: color 0.3s;
 }
