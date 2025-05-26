@@ -317,7 +317,8 @@ input:focus, textarea:focus, select:focus {
 /* État invalide */
 input:invalid, textarea:invalid {
     border-color: var(--error-color);
-    background-color: #FFF8F8;
+    background-color: #FFFFFF;
+    color: #000000;
 }
 
 /* État disabled */
@@ -331,18 +332,18 @@ input:disabled, textarea:disabled, select:disabled {
 small {
     display: block;
     margin-top: 0.5rem;
-    color: #FFFFFF;
+    color: #000000;
     font-size: 1rem;
     font-weight: 500;
 }
 
 /* Messages d'erreur */
 .error-message {
-    color: #FFFFFF;
+    color: #000000;
     font-size: 1rem;
     margin-top: 0.3rem;
     padding: 0.5rem;
-    background-color: rgba(255, 68, 68, 0.9);
+    background-color: rgba(255, 68, 68, 0.1);
     border-radius: 4px;
     display: none;
 }
