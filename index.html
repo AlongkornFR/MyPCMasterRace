@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PC Master Builder - Constructeur de PC Gaming</title>
     <meta name="description" content="Constructeur professionnel de PC Gaming sur mesure. Des configurations personnalisées pour tous les budgets.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/responsive.css">
 </head>
@@ -37,7 +40,7 @@
             </div>
         </section>
 
-        <section id="presentation" class="presentation">
+        <section id="presentation" class="presentation reveal">
             <h2>À Propos de Moi</h2>
             <article class="profile">
                 <img src="./img/photoprofilalong.webp" alt="Photo de profil d'Alongkorn" class="profile-image">
@@ -48,7 +51,7 @@
             </article>
         </section>
 
-        <section id="galerie" class="gallery">
+        <section id="galerie" class="gallery reveal">
             <h2>Nos Réalisations</h2>
             <div class="gallery-grid">
                 <figure>
@@ -66,21 +69,27 @@
             </div>
         </section>
 
-        <section id="services" class="services">
+        <section id="services" class="services reveal">
             <h2>Nos Services</h2>
-            <dl class="services-list">
-                <dt>Configuration Sur Mesure</dt>
-                <dd>Création d'un PC adapté à vos besoins et votre budget</dd>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Configuration Sur Mesure</h3>
+                    <p>Création d'un PC adapté à vos besoins et votre budget</p>
+                </div>
                 
-                <dt>Watercooling Personnalisé</dt>
-                <dd>Installation de systèmes de refroidissement liquide sur mesure</dd>
+                <div class="service-card">
+                    <h3>Watercooling Personnalisé</h3>
+                    <p>Installation de systèmes de refroidissement liquide sur mesure</p>
+                </div>
                 
-                <dt>Optimisation</dt>
-                <dd>Configuration et optimisation des performances de votre PC</dd>
-            </dl>
+                <div class="service-card">
+                    <h3>Optimisation</h3>
+                    <p>Configuration et optimisation des performances de votre PC</p>
+                </div>
+            </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="reveal">
             <div class="contact">
             <h2>Contactez-nous</h2>
             <form id="contactForm" action="" method="post" novalidate>
